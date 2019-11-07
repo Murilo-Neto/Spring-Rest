@@ -13,7 +13,7 @@ import com.murilo.teste.model.Cidade;
 import com.murilo.teste.repository.CidadeRepository;
 
 @RestController
-public class cidadeController {
+public class CidadeController {
 	
 	@Autowired
 	private CidadeRepository cidadeRepository;

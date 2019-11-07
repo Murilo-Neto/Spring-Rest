@@ -41,7 +41,7 @@ public class PessoaController {
 		 
 	}
 	
-	@GetMapping("/pessoas/buscar")
+	@GetMapping("/pessoas/buscar/nome")
 	public List<Pessoa> buscaPessoaNome(@RequestParam String nome){
 		
 		List <Pessoa> pessoa = pessoaRepository.findByNomeIgnoreCase(nome);
@@ -59,7 +59,7 @@ public class PessoaController {
 	}
 	
 	
-	@GetMapping("/pessoas/buscar2")
+	@GetMapping("/pessoas/buscar/identificador")
 	public Pessoa buscaPessoaId(@RequestParam long id) {
 		
 		Pessoa pessoa = pessoaRepository.findById(id);
@@ -74,9 +74,6 @@ public class PessoaController {
 
 	}
 	
-	// pessoas/deletar?id=2
-	// pessoas/deletar/2
-	
 	@DeleteMapping("/pessoas/deletar/{id}")
 	  public void delete(@PathVariable("id") long id) {
 		
@@ -85,7 +82,7 @@ public class PessoaController {
 		if (pessoa != null) {
 			pessoaRepository.delete(pessoa);
 		} else {
-			throw new RequestException("Deu erro");
+			throw new RequestException("A Pessoa Não foi Cadastrada, por isso não é possível remover");
 		}
 		
 	  }
