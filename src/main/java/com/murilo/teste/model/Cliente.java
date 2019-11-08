@@ -9,25 +9,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Pessoa {
+public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column
+	@Column(nullable = false)
 	private String nome;
 	
-	@Column
+	@Column(nullable = false)
 	private String sexo;
 	
-	@Column
+	@Column(nullable = false)
 	private LocalDate data;
 	
-	@Column
+	@Column(nullable = false)
 	private int idade;
 	
-	@Column
+	@Column(nullable = false)
 	private String cidade;
 
 	public long getId() {

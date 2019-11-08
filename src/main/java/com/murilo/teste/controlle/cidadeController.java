@@ -31,7 +31,7 @@ public Cidade cadastrarCidade(@RequestParam String nome, @RequestParam String es
 			return cidadeRepository.save(cidade);
 			
 		}else {
-			throw new RequestException("Cidade já Cadastrada");
+			throw new RequestException("Só é Possível Cadastrar uma Cidade  Com Este Nome Para Este Estado ");
 		}
 	
 	}
@@ -46,7 +46,7 @@ public Cidade cadastrarCidade(@RequestParam String nome, @RequestParam String es
 			return cidade;
 			
 		}else {
-			throw new RequestException("Cidade não Cadastrada");
+			throw new RequestException("Não Existe Nenhuma Cidade Cadastrada Com Este Nome");
 		}
 		
 		
@@ -63,7 +63,7 @@ public Cidade cadastrarCidade(@RequestParam String nome, @RequestParam String es
 			return cidade;
 			
 		}else {
-			throw new RequestException("Cidade não Cadastrada");
+			throw new RequestException("Não Existe Nenhuma Cidade Cadastrada Para este estado");
 		}
 		
 		
